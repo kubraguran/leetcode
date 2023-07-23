@@ -51,3 +51,42 @@ return str1.slice(0,value)
   
 
 };
+
+
+//check three row and if they all 0 then we means we have 0 space count++
+//and for the egdes add 0's
+/**
+ * @param {number[]} flowerbed
+ * @param {number} n
+ * @return {boolean}
+ */
+var canPlaceFlowers = function(flowerbed, n) {
+
+    if(n === 0) {
+        return true;
+    }
+
+    flowerbed.push(0)
+    flowerbed.unshift(0)
+
+     let count = 0;
+
+     for(let i = 0; i < flowerbed.length - 2; i++) {
+        let curr = flowerbed[i]
+        let next = flowerbed[i + 1]
+        let next2 = flowerbed[i + 2]
+
+        if(curr === 0 && next === 0 && next2 === 0){
+            count++;
+             if(count === n){
+            return true
+        }
+            i++;
+        }
+    
+       
+     }
+     return false
+
+
+  
