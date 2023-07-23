@@ -89,4 +89,32 @@ var canPlaceFlowers = function(flowerbed, n) {
      return false
 
 
-  
+  //reverse only vowels
+
+  /**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseVowels = function(s) {
+let vowels = new Set(['a', 'e', 'i', 'o', 'u','A','E','I','O','U']);
+let split = s.split("")
+let left = 0;
+let right = split.length-1;
+
+while(left < right){
+  if(vowels.has(split[left])){
+    while(right > left){
+      if(vowels.has(split[right])){
+        const temp = split[left];
+        split[left] = split[right];
+        split[right] = temp;
+        right--;
+        break
+      }
+      right--;
+    }
+  }
+  left++;
+}
+return split.join("")
+};
