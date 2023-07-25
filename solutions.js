@@ -148,3 +148,56 @@ while(left < right){
 }
 return split.join("")
 };
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+  //solution - 1
+//let sum = nums.reduce((x,y) =>  x * y)
+//let result = nums.map((a,b) => sum/a)
+
+//solution 2
+// its not 0(n) but this reduce means product all element expect itself
+let sum = []
+for(let i = 0; i < nums.length; i++){
+  const find = nums.reduce((x, y, index) => (index !== i ? x * y : x), 1);
+  sum.push(find)
+}
+
+return sum
+};
+
+  
+//O(n) solution 2 point approarch
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+
+let n = nums.length;
+let result = new Array(n).fill(1)
+
+let left = 1;
+for(let i = 0; i < n; i++){
+  result[i] *= left;
+  left *= nums[i]
+}
+
+let right = 1;
+for(let i = n - 1; i >= 0 ; i--){
+  result[i] *= right;
+  right *= nums[i]
+}
+
+return result
+};
+
+
+  
