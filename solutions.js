@@ -200,4 +200,37 @@ return result
 };
 
 
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var increasingTriplet = function(nums) {
+let first = Infinity;
+let second = Infinity;
+
+for(let num of nums){
+  //find smallest first
+  if(num <= first){
+    first = num
+  }else if(num <= second){
+    //find second smallest 
+    second = num
+    //and check the third one
+  }else if (num > second && second > first){
+    return true
+  }
+}
+
+  return false
+};
+
+
+
+
+
+  
+
   
