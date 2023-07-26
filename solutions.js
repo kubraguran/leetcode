@@ -231,6 +231,30 @@ for(let num of nums){
 
 
 
+  /**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function(chars) {
+    let count = {}
+
+    for(let char of chars){
+      //create object and search if we have this val
+      if(count[char]){
+        //then add one 
+        count[char] += 1
+      }else{
+        //if we dont have second time then equal = 1
+        count[char] = 1
+      }
+    }
+
+    console.log(count)
+};
+
+
+
+
   
 
   
