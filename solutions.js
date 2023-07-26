@@ -249,7 +249,17 @@ var compress = function(chars) {
       }
     }
 
-    console.log(count)
+    //console.log(count)
+
+
+  //this make an array with key and values
+   let result = [];
+ for(let [key, value] of Object.entries(count)){
+   result.push(key,value.toString())
+ }
+  console.log(result)
+
+  
 };
 
 
