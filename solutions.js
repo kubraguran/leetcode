@@ -262,6 +262,34 @@ var compress = function(chars) {
   
 };
 
+  /**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function(chars) {
+     
+     let count = {};
+    for(let char of chars){
+        if(count[char]){
+            count[char] += 1;
+        }else{
+            count[char] = 1
+        }
+    }
+
+   let index = 0;
+   for(const[key,value] of Object.entries(count)){
+     chars[index++] = key;
+     if(value > 1){
+        for (let digit of value.toString()) {
+                chars[index++] = digit;
+            }
+     }
+   }
+  return index
+    
+};
+
 
 
 
