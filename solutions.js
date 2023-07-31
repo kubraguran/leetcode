@@ -291,7 +291,57 @@ var compress = function(chars) {
 };
 
 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isSubsequence = function(s, t) {
+ let i = 0;
+ let j = 0;
 
+    while(i < s.length){
+        if(j === t.length){
+            return false
+        }
+        if(s[i] === t[j]){
+            i++;
+        }
+        j++;
+    }
+    return true;
+ 
+};
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+    let count = 0;
+
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] === 0){
+            nums.splice(i,1);
+            i--;  
+            count++;
+        }
+    }
+
+  for (let i = 0; i < count; i++){
+      nums.push(0)
+  }
+
+console.log(nums);
+};
+
+
+
+
+
+  
 
   
 
