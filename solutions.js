@@ -367,6 +367,35 @@ var maxArea = function(height) {
     return maxArea;
 };
 
+
+
+//TWO SUM 
+  /**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var maxOperations = function(nums, k) {
+    nums.sort((a,b) => a - b)
+    let count = 0;
+    let i = 0;
+    let j = nums.length - 1
+
+    while(i < j) {
+        const sum = nums[i] + nums[j]
+        if(sum < k){
+            i++;
+        }else if (sum > k){
+            j--;
+        }else{
+             count++;
+             i++;
+             j--;
+        }
+    
+    }
+    return count
+};
   
 
   
