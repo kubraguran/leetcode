@@ -398,6 +398,27 @@ var maxOperations = function(nums, k) {
 };
   
 
+
+
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+ //2 lowest 1 highest 1
+var maximumProduct = function(nums) {
+ let sort = nums.sort((a,b) => a - b)
+
+ let n = nums.length;
+
+ let maxPos = sort[n - 1] * sort[n - 2] * sort[n - 3]
+ let maxNeg = sort[0] * sort[1] * sort[n - 1]
+ return Math.max(maxPos, maxNeg)
+};
   
 
   
