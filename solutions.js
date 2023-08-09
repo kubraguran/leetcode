@@ -458,15 +458,16 @@ var arrayPairSum = function(nums) {
  //reduce both of them and divide
 var findContentChildren = function(g, s) {
    let sum = 0;
+   let c = g.sort((a,b) => a - b)
+   let sw = s.sort((a,b) => a - b)
    let i = 0;
    let j = 0;
 
-   while(i <= g.length && j <= s.length){
-     if(s[j] >= g[i]){
-      
-       i++;
+   while(i <= c.length && j <= sw.length){
+     if(sw[j] >= c[i]){
        j++;
-        sum++;
+       i++;
+       sum++;
      }else{
        j++;
      }
