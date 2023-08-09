@@ -474,3 +474,24 @@ var findContentChildren = function(g, s) {
    }
    return sum
 };
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArrayByParity = function(nums) {
+    
+    let sorted = nums.sort((a,b) => a - b)
+
+
+    for(let i = 0; i <= sorted.length; i++){
+    if(sorted[i] % 2 === 0){
+    evens = sorted.splice(i, 1)
+    sorted.splice(0,0,evens)
+     
+    }
+    }
+ return sorted.flat()
+};
