@@ -421,4 +421,24 @@ var maximumProduct = function(nums) {
 };
   
 
-  
+
+
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ //max max
+var arrayPairSum = function(nums) {
+    let sum = 0;
+    let sorted = nums.sort((a,b) => a - b)
+    console.log(sorted)
+     for(let i = 0; i < sorted.length; i += 2){
+          sum += sorted[i]   
+     
+     }
+  return sum
+};
