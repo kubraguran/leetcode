@@ -495,3 +495,43 @@ var sortArrayByParity = function(nums) {
     }
  return sorted.flat()
 };
+
+
+
+
+  
+  function ListNode(val, next) {
+   this.val = (val===undefined ? 0 : val)
+   this.next = (next===undefined ? null : next)
+ }
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(list1, list2) {
+
+let sum = new ListNode();
+let head = sum;
+
+while(list1 !== null && list2 !== null){
+
+if(list1.val < list2.val){
+    sum.next = new ListNode(list1.val);
+    list1 = list1.next;
+}else {
+    sum.next = new ListNode(list2.val);
+    list2 = list2.next;
+}
+
+sum = sum.next;
+}
+
+if(list1 !== null)
+sum.next = list1;
+if(list2 !== null)
+sum.next = list2;
+
+
+return head.next
+};
