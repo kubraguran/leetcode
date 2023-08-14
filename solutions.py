@@ -19,3 +19,19 @@ class Solution(object):
        
      
      
+
+
+class Solution(object):
+    def arrayPairSum(self, nums):
+         
+        sum = 0
+        sorts = sorted(nums)
+        
+        for n in range(0, len(sorts), 2):
+            sum += sorts[n]
+
+
+        return sum
+
+
+        
