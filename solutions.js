@@ -535,3 +535,53 @@ sum.next = list2;
 
 return head.next
 };
+
+
+
+
+var findMaxAverage = function(nums, k) {
+    let maxSum = 0;
+    let windows = 0;
+
+    if (nums.length === 1) {
+        return nums[0];
+    } else if (nums.length === k) {
+        for (let i = 0; i < k; i++) {
+            windows += nums[i];
+        }
+        return windows / k; // Return average directly
+    }
+
+    // calculation part
+    for (let i = 0; i < k; i++) {
+        windows += nums[i];
+    }
+    
+    maxSum = windows
+    // sliding part
+    for (let i = k; i < nums.length; i++) {
+        windows = windows - nums[i - k] + nums[i];
+        maxSum = Math.max(maxSum, windows);
+    }
+    
+    return maxSum / k;
+};
+
+
+
+  /**
+ * @param {Array} arr
+ * @param {number} size
+ * @return {Array[]}
+ */
+var chunk = function(arr, size) {
+    let chunked = []
+
+       for(let i = 0; i < arr.length; i++){
+           chunked.push(arr.splice(0,size))
+           i--;
+       }
+return chunked
+
+};
+ 
