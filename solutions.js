@@ -610,4 +610,118 @@ let pascal = [];
   }
 return pascal
 };
- 
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaxConsecutiveOnes = function(nums) {
+    let con = []
+    let bigCon = 0
+    let count = 0
+
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] === 1){
+            count++;
+            bigCon = Math.max(count,bigCon)
+        }else{
+            count = 0
+        }
+        con.push(count)
+    }
+    // console.log(con)
+     return bigCon
+    // return Math.max(...con)
+
+};
+
+
+
+
+    // Check if all values from 1 to max are present without gaps
+    for (let i = 1; i <= max; i++) {
+        if (!nums.includes(i)) {
+            return false; // Value i is missing
+        }
+    }
+
+
+  /**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+
+
+
+  
+var isGood = function(nums) {
+    let max = Math.max(...nums)
+    let s = nums.sort((a,b) => a - b)
+    let curr = 0;
+    
+
+
+    for(let i = 1; i <= max; i++){
+        if(s[i - 1] !== i){
+            return false
+        }
+    }
+
+    for(let n of nums){
+        if(n === max){
+            curr++;
+        }
+    }
+    
+    if(curr === 2){
+        return true;
+    }else{
+        return false
+    }
+
+};
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var sortColors = function(nums) {
+     
+    for(let i = 0; i < nums.length - 1; i++){
+        for(let j = 0; j < nums.length -i - 1; j++){
+          if(nums[j] > nums[j + 1]){
+              temp = nums[j]
+              nums[j] = nums[j + 1]
+              nums[j + 1] = temp
+          }
+        }
+    }
+    console.log(nums)
+};
+
+
+
+
+  /*
+  QUICK SORT BETTER THAN BUBBLE SORT
+  function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const pivot = arr[Math.floor(arr.length / 2)];
+  const left = arr.filter((el) => el < pivot);
+  const middle = arr.filter((el) => el === pivot);
+  const right = arr.filter((el) => el > pivot);
+
+  return [...quickSort(left), ...middle, ...quickSort(right)];
+}
+
+// Example usage:
+const arr = [3, 6, 8, 10, 1, 2, 1];
+const sortedArr = quickSort(arr);
+console.log(sortedArr); // Output: [1, 1, 2, 3, 6, 8, 10]
+
+
+  */
+
