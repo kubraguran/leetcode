@@ -725,3 +725,37 @@ console.log(sortedArr); // Output: [1, 1, 2, 3, 6, 8, 10]
 
   */
 
+
+
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findLHS = function(nums) {
+    let count =  {}
+    let counter = 0;
+
+    for(n of nums){
+      if(count[n]){
+          count[n] += 1
+      }else{
+          count[n] = 1
+      }
+
+    }
+    for(let key in count){
+       key = parseInt(key) //cevirmek lazim 
+
+       if(count[key + 1]){
+           let length = count[key] + count[key + 1]
+           counter = Math.max(length, counter)
+       }
+    }
+    return counter
+};
+  
+
