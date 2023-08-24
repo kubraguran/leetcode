@@ -73,5 +73,26 @@ class Solution(object):
         
    
 
+        class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        count = {}
+
+        for i in range(len(nums)):
+            num = nums[i]
+
+            if(num in count and i - count[num] <= k):
+                return True
+
+            
+            count[num] = i
+
+        return False
+
+
+
+
+    
+
+        
         
         
