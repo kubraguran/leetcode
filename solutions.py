@@ -34,4 +34,26 @@ class Solution(object):
         return sum
 
 
+
+
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+     count = {}
+
+     for num in nums:
+        if num in count:
+            count[num] += 1
+        else:
+            count[num] = 1
+
+    #  print(count)
+
+     for key,value in count.items():
+        if value >= 2:
+            return True;
+
+     return False 
+
+
         
