@@ -793,3 +793,31 @@ var findRestaurant = function(list1, list2) {
 
 };
 
+
+
+
+  /**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {boolean}
+ */
+var containsNearbyDuplicate = function(nums, k) {
+     let count = {}
+
+     for(let i = 0; i < nums.length; i++){
+         let num = nums[i]
+         
+         if(num in count && i - count[num] <= k){
+             return true
+         }
+
+         count[num] = i
+     }
+     return false
+
+
+    };
+
+
+
+
