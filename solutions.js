@@ -820,4 +820,17 @@ var containsNearbyDuplicate = function(nums, k) {
 
 
 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
 
+   let tp = t.split("").sort()
+   let sp = s.split("").sort()
+   
+   let result = tp.length === sp.length && tp.every((v,i) => v === sp[i])
+  return result
+    
+};
