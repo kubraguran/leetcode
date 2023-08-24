@@ -94,5 +94,20 @@ class Solution(object):
     
 
         
+        class Solution(object):
+    def isAnagram(self, s, t):
+       sp = sorted(list(s))
+       tp = sorted(list(t))
+
+       if len(tp) != len(sp):
+          return False
+
+       for i in range(len(tp)):
+          if sp[i] != tp[i]:
+             return False
+
+         
+       return True
+          
         
         
