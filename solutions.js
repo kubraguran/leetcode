@@ -834,3 +834,41 @@ var isAnagram = function(s, t) {
   return result
     
 };
+
+  //hash table
+
+  /**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+  let ss = s.split("").sort()
+    let st = t.split("").sort()
+    let count1 = {}
+    let count2 = {}
+
+    if(st.length != ss.length) return false
+
+    for(let i of ss){
+        if(count1[i]){
+            count1[i] += 1
+        }else{
+            count1[i] = 1
+        }
+    }
+
+    for(let j of st){
+        if(count2[j]){
+            count2[j] += 1
+        }else{
+            count2[j] = 1
+        }
+    }
+  
+
+for (let key in count2) {
+    if (!count1.hasOwnProperty(key) || count1[key] !== count2[key]) {
+        return false;
+    }
+}
