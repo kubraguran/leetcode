@@ -109,5 +109,51 @@ class Solution(object):
          
        return True
           
+
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        sum = []
+
+        for i  in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i] + nums[j] == target:
+                    sum.append(i)
+                    sum.append(j)
+
+        return sum
+
+
+ #hash table version
         
+class Solution(object):
+    def isAnagram(self, s, t):
+        count1 = {}
+        count2 = {}
+
+        if len(t) != len(s):
+          return False
+
+        for i in s:
+            if i in count1:
+                count1[i] += 1
+            else:
+                count1[i] = 1
+
+      
+
+        for j in t:
+            if j in count2:
+                count2[j] += 1
+            else:
+                count2[j] = 1  
+
+
+        for key in count2:
+            if key not in count1 or count1[key] != count2[key]:
+                return False
+
+        return True
+    
+          
         
