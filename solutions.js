@@ -872,3 +872,42 @@ for (let key in count2) {
         return false;
     }
 }
+
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(nums, target) {
+    let i = 0;
+    let j  = nums.length -1
+    let count = [-1,-1]
+while (i <= j) {
+
+    if(nums[i] === target && count[0] === -1){
+        count[0] = i
+    }
+
+    if(nums[j] === target && count[1] === -1){
+        count[1] = j
+    }
+
+    if(nums[i] !== target){
+        i++
+    }
+    if(nums[j] !== target){
+        j--
+    }
+
+    if(count[0] !== -1 && count[1] !== -1){
+        break
+    }
+     
+    }
+    return count
+
+};
