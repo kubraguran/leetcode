@@ -156,4 +156,20 @@ class Solution(object):
         return True
     
           
-        
+
+
+class Solution(object):
+    def strStr(self, haystack, needle):
+        empty = ''
+
+        if len(haystack) < len(needle):
+            return -1
+
+        for i in range(0, len(haystack)):
+            if(haystack[i] == needle[0]):
+                empty = haystack[i:i+len(needle)]
+                if empty == needle:
+                    return i
+
+        return -1
+
