@@ -911,3 +911,29 @@ while (i <= j) {
     return count
 
 };
+
+
+
+
+  /**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    let empty = ''
+    if(haystack.length < needle.length){
+        return -1
+    }
+
+    for(let i = 0; i < haystack.length; i++){
+        if(haystack[i] === needle[0]){
+            empty = haystack.substring(i, i + needle.length)
+            if(empty === needle){
+                return i
+            }
+        }
+    }
+return -1
+};
+
