@@ -961,3 +961,26 @@ var pivotIndex = function(nums) {
     }
  return -1
 };
+
+
+
+
+
+  /**
+ * @param {string} columnTitle
+ * @return {number}
+ */
+
+ // s = 0
+ // s = s * 26 + i
+        
+var titleToNumber = function(columnTitle) {
+    let sum = 0;
+
+    for(let i = 0; i < columnTitle.length; i++){
+        let char = columnTitle.charCodeAt(i) - 'A'.charCodeAt(0) + 1
+        sum = sum * 26 + char
+    }
+ return sum
+
+};
