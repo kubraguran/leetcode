@@ -239,5 +239,18 @@ class Solution(object):
                 left = left + nums[i]
         return -1
 
-        
+
+
+
+
+class Solution(object):
+    def titleToNumber(self, columnTitle):
+        sum = 0
+
+        for i in range(len(columnTitle)):
+            char = ord(columnTitle[i]) - ord('A') + 1
+            sum = sum * 26 + char
+
+        return sum
+
 
