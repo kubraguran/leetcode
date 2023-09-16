@@ -215,5 +215,29 @@ class Solution(object):
 
 
         return -1
+
+
+
+
+
+
+class Solution(object):
+    def findMiddleIndex(self, nums):
+
+        left = 0
+        right = sum(nums)
+
+        for i in range(0, len(nums)):
+            right = right - nums[i]
+
+            if(left == right):
+                if(i != 0):
+                    return i
+                else:
+                    return 0
+            else:
+                left = left + nums[i]
+        return -1
+
         
 
