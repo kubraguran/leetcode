@@ -937,3 +937,27 @@ var strStr = function(haystack, needle) {
 return -1
 };
 
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+
+var pivotIndex = function(nums) {
+    let left = 0
+    let right = nums.reduce((a,b) => a + b)
+   
+
+    for(let i = 0; i < nums.length; i++){
+        right = right - nums[i]
+        if(left === right){
+            return i 
+        }else{
+            left = left + nums[i]
+        }
+        
+    }
+ return -1
+};
