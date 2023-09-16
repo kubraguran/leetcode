@@ -193,5 +193,27 @@ class Solution(object):
                 r = mid - 1
 
         return l
+
+
+
+
+
+
+
+class Solution(object):
+    def pivotIndex(self, nums):
+
+        left = 0;
+        right = sum(nums)
+
+        for i in range(0, len(nums)):
+            right = right - nums[i]
+            if(right == left):
+                return i
+            else:
+                left = left + nums[i]
+
+
+        return -1
         
 
