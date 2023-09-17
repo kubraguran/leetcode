@@ -254,3 +254,26 @@ class Solution(object):
         return sum
 
 
+
+
+class Solution(object):
+    def addDigits(self, num):
+      
+
+        if num <= 9 :
+            return num
+
+        while num > 9:
+             s = str(num)
+             digits = list(map(int, s))
+             num = reduce(lambda a,b: a+b, digits) 
+        return num
+
+
+             
+
+
+
+        
+        
+
