@@ -984,3 +984,55 @@ var titleToNumber = function(columnTitle) {
  return sum
 
 };
+
+
+
+
+
+  /**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function(n) {
+    
+     let sum = 0;
+     let seen = new Set();
+
+     while(sum !== 1 && !seen.has(n)){
+         seen.add(n)
+         let digits = n.toString().split("").map(Number)
+         sum = digits.reduce((a,b) => {
+             a += Math.pow(b , 2)
+             return a
+         },0)
+         n = sum
+     }
+
+    return sum === 1 ? true : false
+};
+
+
+
+
+
+  /**
+ * @param {number} num
+ * @return {number}
+ */
+var addDigits = function(num) {
+    let sum = 0;
+
+
+    if(num <= 9) return num
+
+
+
+    while(num > 9){
+        let digits = num.toString().split("").map(Number)
+        sum = digits.reduce((a,b) => {
+           return a + b
+        }, 0)
+       num = sum
+    }
+  return sum  
+};
