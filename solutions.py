@@ -273,7 +273,26 @@ class Solution(object):
              
 
 
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        sMap = {}
+        tMap = {}
 
+        if len(s) != len(t):
+            return False
+
+        for i in range(len(s)):
+            sChr = s[i]
+            tChr = t[i]
+
+            if sMap.get(sChr) is None and tMap.get(tChr) is None:
+                sMap[sChr] = tChr
+                tMap[tChr] = sChr
+
+            if sMap[sChr] != tChr or tMap[tChr] != sChr:
+                return False
+        
+        return True
         
         
 
