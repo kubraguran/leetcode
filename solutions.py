@@ -272,7 +272,6 @@ class Solution(object):
 
              
 
-
 class Solution(object):
     def isIsomorphic(self, s, t):
         sMap = {}
@@ -289,7 +288,7 @@ class Solution(object):
                 sMap[sChr] = tChr
                 tMap[tChr] = sChr
 
-            if sMap[sChr] != tChr or tMap[tChr] != sChr:
+            if sMap.get(sChr) != tChr or tMap.get(tChr) != sChr:
                 return False
         
         return True
