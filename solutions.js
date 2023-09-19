@@ -1036,3 +1036,44 @@ var addDigits = function(num) {
     }
   return sum  
 };
+
+
+
+
+
+
+
+  /**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isIsomorphic = function(s, t) {
+
+    if(s.length !== t.length) return false
+    
+    let sMap = {}
+    let tMap = {}
+
+    for(let i = 0; i < s.length; i++){
+        let sChar = s[i]
+        let tChar = t[i]
+
+        if(sMap[sChar] === undefined && tMap[tChar] === undefined){
+         //burda bir nevi char degistirme gibi atama yapiyoruz
+           sMap[sChar] = tChar
+           tMap[tChar] = sChar
+        } 
+        //burda da dogru atanmis mi diye kontrol ediyoruz
+
+        if(sMap[sChar] !== tChar || tMap[tChar] !== sChar){
+            return false
+        }
+    }
+return true
+
+};
+
+
+
+  
