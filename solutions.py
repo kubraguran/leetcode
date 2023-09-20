@@ -293,5 +293,27 @@ class Solution(object):
         
         return True
         
+
+
+
+
+class Solution(object):
+    def isHappy(n):
+        find = set()
+        sum = 0
+
+        while sum != 1 and n not in find:
+            find.add(n)
+            digits = [int(digit) for digit in str(n)]
+            sum = sum([digit ** 2 for digit in digits])
+            n = sum
+
+        return sum == 1
+
+
+       
+
+
+
         
 
