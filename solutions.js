@@ -1075,5 +1075,35 @@ return true
 };
 
 
+  /**
+ * @param {string} pattern
+ * @param {string} s
+ * @return {boolean}
+ */
+var wordPattern = function(pattern, s) {
+   let sMap = new Map()
+   let pMap = new Map()
+   let str = s.split(" ")
+   let ptr = pattern.split("")
+       
+   if(str.length !== ptr.length) return false
+
+
+        for(let i = 0; i < str.length; i++){
+            let sChr = str[i]
+            let pChr = ptr[i]
+
+            if(!sMap.has(sChr) && !pMap.has(pChr)){
+                sMap.set(sChr, pChr)
+                pMap.set(pChr, sChr)
+            }else if(sMap.get(sChr )!== pChr || pMap.get(pChr) !== sChr){
+                return false
+            }
+        }
+
+        return true
+
+};
+
 
   
