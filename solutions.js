@@ -1106,4 +1106,33 @@ var wordPattern = function(pattern, s) {
 };
 
 
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    let count = {}
+
+    for(let num of nums){
+    if(count[num]){
+        count[num]++
+    }else{
+        count[num] = 1
+    }
+
+    }
+  
+  for(const [key,value] of Object.entries(count)){
+      if(value % 2 != 0){
+        return key
+      }
+        
+  }
+};
+
+
   
