@@ -1135,4 +1135,29 @@ var singleNumber = function(nums) {
 };
 
 
+
+  /**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let sum = 0;
+    let left = 0;
+    let right = 1
+
+
+    while(right < prices.length){
+     if(prices[right] > prices[left]){ 
+       let current = prices[right] - prices[left]
+       sum = Math.max(sum,current)
+     }else{
+       left = right
+     }    
+     right++
+    
+ }
+      return sum
+    }
+
+
   
