@@ -1160,4 +1160,30 @@ var maxProfit = function(prices) {
     }
 
 
+
+  /**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+    let count = {}
+
+    for(i of s){
+        if(count[i]){
+            count[i]++
+        }else{
+            count[i] = 1
+        }
+    }
+
+   for(let [key,value] of Object.entries(count)){
+       if(value === 1){
+         return s.indexOf(key)
+       }
+    
+   }
+
+return - 1
+};
+
   
