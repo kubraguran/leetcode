@@ -1186,4 +1186,26 @@ var firstUniqChar = function(s) {
 return - 1
 };
 
+
+
+
+
+  /**
+ * @param {string} s
+ * @return {character}
+ */
+var repeatedCharacter = function(s) {
+  let count = {};
+
+    for (let i = 0; i < s.length; i++) {
+        if (count[s[i]]) {
+        return s[i]
+        }
+        else{
+            count[s[i]] = 1
+        }
+    }
+
+    return count;
+}
   
