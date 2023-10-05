@@ -1208,4 +1208,46 @@ var repeatedCharacter = function(s) {
 
     return count;
 }
+
+
+
+
+
+  /**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+
+ //sliding window
+var maxVowels = function(s, k) {
+    let vowels = ['a','e','i','o','u']
+    let temp = 0;
+    let count = 0;
+
+    for(let i = 0; i < k; i++){
+        if(vowels.includes(s[i])){
+            temp++
+        }
+
+    count = temp
+
+        for(let i = k; i < s.length;i++){
+            if(vowels.includes(s[i])){   //bastan
+                temp++
+            }
+
+            if(vowels.includes(s[i-k])){     //sondan
+                temp--
+            }
+            count = Math.max(temp,count)
+        }
+    }
+
+   return count
+    }
+
+ 
+
   
+
