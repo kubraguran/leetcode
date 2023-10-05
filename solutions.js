@@ -1219,6 +1219,12 @@ var repeatedCharacter = function(s) {
  * @return {number}
  */
 
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+
  //sliding window
 var maxVowels = function(s, k) {
     let vowels = ['a','e','i','o','u']
@@ -1230,7 +1236,8 @@ var maxVowels = function(s, k) {
             temp++
         }
 
-    count = temp
+    }
+        count = temp
 
         for(let i = k; i < s.length;i++){
             if(vowels.includes(s[i])){   //bastan
@@ -1242,10 +1249,14 @@ var maxVowels = function(s, k) {
             }
             count = Math.max(temp,count)
         }
-    }
+        
 
    return count
     }
+
+ 
+
+  
 
  
 
