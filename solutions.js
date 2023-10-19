@@ -1284,3 +1284,38 @@ var findDifference = function(nums1, nums2) {
 
   
 
+
+
+
+
+
+  /**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var longestOnes = function(nums, k) {
+    let l = 0;
+    let r = 0;
+    let max = 0;
+    let count = 0;
+
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] === 0){
+            count++
+
+            while(count > k){
+                if(nums[r] === 0){
+                  count--
+                }
+                r++
+            }
+
+        }
+                 max = Math.max(max, i - r+1)
+
+
+    }
+return max
+    
+};
