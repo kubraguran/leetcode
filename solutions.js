@@ -1346,3 +1346,44 @@ var increasingTriplet = function(nums) {
 
  return false
 };
+
+
+
+
+  /**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function(chars) {
+    let counter = 1
+    let str = " "
+
+    for(let i = 0 ;i < chars.length; i++){
+        if(chars[i] === chars[i+1]){
+            counter++
+        }else{
+           if(counter == 1){
+               str += chars[i]
+               counter = 1
+           }else{
+            str += chars[i] + counter
+            counter = 1
+           }
+         
+        }
+    }
+
+  let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== " ") {
+            arr.push(str[i]);
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        chars[i] = arr[i];
+    }
+
+    return arr.length;
+
+};
