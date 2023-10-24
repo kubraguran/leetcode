@@ -1319,3 +1319,30 @@ var longestOnes = function(nums, k) {
 return max
     
 };
+
+
+  /**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var increasingTriplet = function(nums) {
+    let d1 = Infinity
+    let d2 = Infinity
+    let d3 = Infinity
+
+    for(let num of nums){
+        if(num <= d1){
+            d1 = num
+        }else if(num <= d2){
+            d2 = num
+        }else{
+            d3 = num
+            if(d3 > d2){
+                return true
+            }
+        }
+   
+    }
+
+ return false
+};
