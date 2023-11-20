@@ -312,7 +312,27 @@ class Solution(object):
 
 
        
+#selection sort
 
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        
+        for i in range(len(nums) - 1):
+            mn = i
+            
+            for j in range(i+1, len(nums)):
+                if nums[j] < nums[mn]:
+                    mn = j
+                    
+                    
+            temp = nums[i]
+            nums[i] = nums[mn]
+            nums[mn] = temp
+            
+        
+        return nums
+            
+        
 
 
         
