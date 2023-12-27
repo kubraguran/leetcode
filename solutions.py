@@ -331,7 +331,45 @@ class Solution:
             
         
         return nums
-            
+
+
+
+
+
+class Solution:
+    def diagonalPrime(self, nums: List[List[int]]) -> int:
+
+        sum = []
+        
+        for n in range(len(nums)):
+            for m in range(len(nums[n])):
+                if n == m or n + m == len(nums) - 1:
+                    num = nums[n][m]
+                    isPrime = True
+
+                    if num <= 1:
+                        isPrime = False
+                    else:
+                        for k in range(2, int(num**0.5) + 1):
+                            if num % k  == 0:
+                                isPrime = False
+                                break
+
+
+
+                    if isPrime:
+                        sum.append(num)
+
+
+
+        if sum:
+            return max(sum)
+        else:
+            return 0
+
+
+                                
+        
         
 
 
