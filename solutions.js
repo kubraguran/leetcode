@@ -1456,3 +1456,45 @@ var sortArray = function(nums) {
     }
     return nums
 };
+
+
+
+
+  /**
+ * @param {number[][]} nums
+ * @return {number}
+ */
+var diagonalPrime = function(nums) {
+
+    let sum = []
+
+
+
+    for(let i = 0; i < nums.length; i ++) {
+        for(let j = 0; j < nums[i].length; j++) {
+          if(i === j || i + j === nums.length - 1){
+              let num = nums[i][j]
+          
+          let isPrime = true
+
+          if(num <= 1){
+              isPrime = false
+          }else{
+              for(let k = 2; k * k <= num; k++){
+                  if(num % k === 0){
+                      isPrime = false
+                      break
+                  }
+              }
+          }
+
+          if(isPrime){
+              sum.push(num)
+          }
+
+        } 
+        
+    }
+    }
+  return sum.length > 0 ? Math.max(...sum) : 0
+};
