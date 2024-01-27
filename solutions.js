@@ -1525,4 +1525,32 @@ var deleteDuplicates = function(head) {
 };
 
 
+
+  /**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+var removeElements = function(head, val) {
+    let curr = head
+    let ar = new ListNode(0)
+    let tail = ar
+
+    while(curr){
+        if(curr.val !== val){
+            tail.next = curr
+            tail = tail.next
+        }
+        curr = curr.next
+    }
+    tail.next = null
+    return ar.next
+};
   
